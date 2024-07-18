@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "demostf-pov-autouploader"
+version = "0.1.0"
+description = "A script to upload TF2 demos to demos.tf"
+authors = ["Elliot Tower <elliot@elliottower.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [
+    { include = "demostf_pov_autouploader" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "^2.32.3"
+watchdog = "^4.0.1"
+pytz = "^2024.1"
+tzlocal = "^5.2"
+psutil = "^6.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
