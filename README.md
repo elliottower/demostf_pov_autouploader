@@ -1,6 +1,8 @@
 # TF2 POV Demo Auto Uploader
 
-This script automatically uploads TF2 POV demos to demos.tf.
+This project uses the [demos.tf](https://demos.tf/) API in order to upload Team Fortress 2 POV demos automatically.
+
+The repository also contains some helper scripts such as `fetch_metadata.py` which searches [demos.tf](https://demos.tf/) to find and STV demo matching a given POV demo, and fetches the metadata for that STV demo.
 
 ## Installation
 
