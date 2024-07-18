@@ -8,6 +8,7 @@ import time
 import configparser
 import psutil
 
+from demostf_pov_autouploader import PROJECT_ROOT
 from demostf_pov_autouploader.fetch_metadata import extract_metadata
 
 
@@ -89,8 +90,7 @@ class DemoHandler(FileSystemEventHandler):
 
 def main():
     parser = argparse.ArgumentParser(description='Upload TF2 demos to demos.tf.')
-    parser.add_argument('--folder', type=str, required=False, help='Folder to watch for new demo files', default="/Users/elliottower/Documents/GitHub/demostf_pov_autouploader")
-    # parser.add_argument('--folder', type=str, help='Folder to watch for new demo files. Default: C:\\Program Files (x86)\\Steam\\SteamApps\\common\\Team Fortress 2\\tf\\demos\\', default="C:\\Program Files (x86)\\Steam\\SteamApps\\common\\Team Fortress 2\\tf\\demos\\")
+    parser.add_argument('--folder', type=str, required=False, help='Folder to watch for new demo files', default=PROJECT_ROOT)
     args = parser.parse_args()
 
     demo_folder = args.folder

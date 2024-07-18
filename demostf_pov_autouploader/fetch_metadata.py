@@ -1,9 +1,10 @@
 import os
 import argparse
 import requests
-import time
 from datetime import datetime, timezone, timedelta
 from tzlocal import get_localzone
+
+from demostf_pov_autouploader import PROJECT_ROOT
 
 DEMO_API_BASE_URL = "https://api.demos.tf"
 
@@ -127,8 +128,10 @@ def extract_metadata(demo_file_path, steam_id):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Fetch and display metadata for a TF2 demo file.')
-    parser.add_argument('--demo_file', type=str, help='Absolute path to the demo file', default="/Users/elliottower/Documents/GitHub/demostf_pov_autouploader/2024-06-11_22-39-08.dem")
-    parser.add_argument('--steam_id', type=str, help='Steam ID (steamid64) of the player', default=76561198059645150)
+    EXAMPLE_DEMO_PATH = os.path.join(PROJECT_ROOT, "2024-06-11_22-39-08.dem")
+    EXAMPLE_STEAM_ID = 76561198059645150
+    parser.add_argument('--demo_file', type=str, help='Absolute path to the demo file', default=EXAMPLE_DEMO_PATH)
+    parser.add_argument('--steam_id', type=str, help='Steam ID (steamid64) of the player', default=EXAMPLE_STEAM_ID)
     args = parser.parse_args()
 
     extract_metadata(demo_file_path=args.demo_file, steam_id=args.steam_id)
